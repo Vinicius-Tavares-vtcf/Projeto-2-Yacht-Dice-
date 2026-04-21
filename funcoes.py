@@ -61,4 +61,17 @@ def calcula_pontos_sequencia_baixa(dados_cairam):
     return resposta
 
     
-        
+def calcula_pontos_sequencia_alta  (lista_de_dados):
+    dicio1 = {1:0, 2:0, 3:0, 4:0, 5:0}
+    dicio2 = {2:0, 3:0, 4:0, 5:0, 6:0}
+    for n in lista_de_dados:
+        if n in dicio1:
+            dicio1[n] += 1
+        if n in dicio2:
+            dicio2[n] += 1
+    for value in dicio1.values():
+        if value == 0:
+            for v in dicio2.values():
+                if v == 0:
+                    return 0
+    return 30
