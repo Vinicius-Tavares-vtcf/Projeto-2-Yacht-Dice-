@@ -75,3 +75,29 @@ def calcula_pontos_sequencia_alta  (lista_de_dados):
                 if v == 0:
                     return 0
     return 30
+
+def calcula_pontos_full_house(dados):
+    dicio = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+    for numero in dados:
+        dicio[numero] += 1
+    tem_trinca = False
+    tem_par = False     
+    for valor in dicio.values():
+        if valor == 3:
+            tem_trinca = True
+        if valor == 2:
+            tem_par = True
+    lista_numeros_dicio = []
+    for numero in dicio:
+        if dicio[numero] == 2:
+            lista_numeros_dicio.append(2*numero)
+        elif dicio[numero] == 3:
+            lista_numeros_dicio.append(3*numero)
+    
+    if tem_trinca and tem_par:
+        soma = 0 
+        for i in lista_numeros_dicio:
+            soma += i
+        return soma
+    else:
+        return 0
