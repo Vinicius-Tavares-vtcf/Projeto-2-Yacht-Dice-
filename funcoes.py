@@ -101,3 +101,17 @@ def calcula_pontos_full_house(dados):
         return soma
     else:
         return 0
+    
+
+def calcula_pontos_quadra  (lista_de_dados):
+    dicio = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+    total = 0
+    for n in lista_de_dados:
+        dicio[n] += 1
+        total += n
+    for value in dicio.values():
+        if value >= 4:
+            return total
+    return 0
+    
+    
