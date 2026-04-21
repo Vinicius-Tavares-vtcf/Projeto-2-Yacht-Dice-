@@ -37,3 +37,28 @@ def calcula_pontos_soma  (lista_de_dados):
     for n in lista_de_dados:
         soma += n
     return soma
+
+def calcula_pontos_sequencia_baixa(dados_cairam):
+    dicio1 = {1 :0, 2:0, 3:0, 4:0}
+    dicio2 = {2:0, 3:0, 4:0, 5:0}
+    dicio3 = {3:0, 4:0, 5:0, 6:0}
+    resposta = 15
+    for numero in dados_cairam:
+        if numero in dicio1:
+            dicio1[numero] += 1
+        if numero in dicio2:
+            dicio2[numero] += 1
+        if numero in dicio3:
+            dicio3[numero] += 1
+    
+    for numero in dicio1:
+        if dicio1[numero] == 0:
+            for numero in dicio2:
+                if dicio2[numero] == 0:
+                    for numero in dicio3:
+                        if dicio3[numero] == 0:
+                            resposta = 0
+    return resposta
+
+    
+        
