@@ -25,3 +25,9 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover) :
     del dados_no_estoque[dado_para_remover]
     
     return [dados_rolados, dados_no_estoque]
+
+def calcula_pontos_regra_simples(dados_rolados):
+    resposta = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for i in range(len(dados_rolados)):
+        resposta[dados_rolados[i]] += dados_rolados[i]
+    return resposta
