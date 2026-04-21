@@ -114,4 +114,12 @@ def calcula_pontos_quadra  (lista_de_dados):
             return total
     return 0
     
+def calcula_pontos_quina(lista_de_dados):
+    dicio = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
     
+    for n in lista_de_dados:
+        dicio[n] += 1
+    for value in dicio.values():
+        if value >= 5:
+            return 50
+    return 0
